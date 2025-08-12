@@ -532,7 +532,7 @@ function updateSpriteFrame() {
     }
     
     // Apply the sprite image and position
-    sprite.style.backgroundImage = `url('../sheets/DinoSprites - ${currentCharacter}.png')`;
+    sprite.style.backgroundImage = `url('./public/DinoSprites - ${currentCharacter}.png')`;
     sprite.style.backgroundPosition = `-${x}px -${y}px`;
     sprite.style.backgroundSize = `${SPRITE_WIDTH * FRAMES_PER_ROW}px ${SPRITE_HEIGHT}px`;
     
@@ -608,7 +608,7 @@ function preloadSprites() {
     // Pre-cache sprite sheets
     characters.forEach(character => {
         const img = new Image();
-        img.src = `../sheets/DinoSprites - ${character}.png`;
+        img.src = `./public/DinoSprites - ${character}.png`;
         
         // Store the image in our cache
         spriteImages[character] = img;
