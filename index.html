@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Open World</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- XState for Finite State Machine -->
+    <script src="https://unpkg.com/xstate@4/dist/xstate.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="game-world" id="gameWorld">
+            <div class="sprite-container" id="spriteContainer">
+                <div class="sprite" id="sprite"></div>
+                <div class="damage-zone" id="damageZone"></div>
+            </div>
+            <!-- Obstacles will be dynamically added here -->
+        </div>
+        <div class="controls">
+            <button onclick="changeCharacter('vita')">Vita</button>
+            <button onclick="changeCharacter('mort')">Mort</button>
+            <button onclick="changeCharacter('tard')">Tard</button>
+            <button onclick="changeCharacter('doux')">Doux</button>
+        </div>
+        <div class="animation-controls">
+            <button onclick="sendEvent('IDLE')">Idle</button>
+            <button onclick="sendEvent('KICK')">Kick</button>
+            <button onclick="sendEvent('CROUCH')">Crouch</button>
+            <button onclick="sendEvent('SNEAK')">Sneak</button>
+            <button onclick="testSneakAnimation()">Test Sneak</button>
+        </div>
+        <div class="state-info">
+            Current State: <span id="currentState">idle</span>
+        </div>
+        <div class="health-bar">
+            <div class="health-fill" id="healthFill"></div>
+        </div>
+        <div class="instructions" id="instructions">
+            <h2>Controls</h2>
+            <p>Arrow Keys or WASD: Move</p>
+            <p>Space: Kick</p>
+            <p>Shift: Crouch</p>
+            <p>Shift + Any Movement: Sneak</p>
+            <p>Click to start</p>
+        </div>
+    </div>
+    <script src="store.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
